@@ -26,7 +26,7 @@ router.post('/', authenticateUser, authorizeUser, (req,res) => {
     })
 })
 
-router.delete('/', authenticateUser, authorizeUser,(req,res) => {
+router.delete('/:id', authenticateUser, authorizeUser,(req,res) => {
     const id = req.params.id
     Category.findByIdAndDelete({
         _id:id,

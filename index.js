@@ -8,6 +8,7 @@ const {mongoose} = require('./config/database')
 const {userRouter} = require('./app/controllers/userController')
 const {addressRouter} = require('./app/controllers/addressController')
 const {categoryRouter} =  require('./app/controllers/categoryController')
+const {productRouter} = require('./app/controllers/productController')
 
 app.use(express.json())
 app.use(cors())
@@ -15,11 +16,11 @@ app.use(cors())
 app.use('/users', userRouter)
 app.use('/address', addressRouter)
 app.use('/category', categoryRouter)
+app.use('/product', productRouter)
 
 // app.get('/', (req,res) => {
 //     res.send('welcome to Employee webiste')
 // })
-
 
 app.listen(port,()=>{
     console.log('listening to port',port)
