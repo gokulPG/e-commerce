@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcryptjs = require('bcryptjs')
 const User = require('../models/user')
-const { authenticationUser } = require('../middlewares/authentication')
+const { authenticateUser } = require('../middlewares/authentication')
 
 //localhost:3007/users/register
 
@@ -44,7 +44,7 @@ router.post('/login',(req,res)=>{
 // })
 
 // localhost:3005/users/logout
-router.delete('/logout', authenticationUser, function(req, res) {
+router.delete('/logout', authenticateUser, function(req, res) {
     const { user, token } = req
     User.findByIdAndUpdate(user._id, { $pull: { tokens: { token: token } } })
         .then(() => {
@@ -56,4 +56,5 @@ router.delete('/logout', authenticationUser, function(req, res) {
 })
 
 module.exports = {
-    userRouter: router}
+    userRouter: router
+}
