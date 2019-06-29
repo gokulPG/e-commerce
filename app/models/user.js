@@ -42,7 +42,11 @@ const userSchema = new Schema({
                 default: Date.now
             }
         }
-    ]
+    ],
+    isAdmin:{
+        type: Boolean,
+        default:false
+    }
 })
 
 //pre hoooks
