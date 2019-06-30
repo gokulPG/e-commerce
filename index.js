@@ -10,6 +10,7 @@ const {addressRouter} = require('./app/controllers/addressController')
 const {categoryRouter} =  require('./app/controllers/categoryController')
 const {productRouter} = require('./app/controllers/productController')
 const {reviewRouter} = require('./app/controllers/reviewController')
+const {cartRouter} = require('./app/controllers/cartController')
 
 app.use(express.json())
 app.use(cors())
@@ -19,6 +20,7 @@ app.use('/address', addressRouter)
 app.use('/category', categoryRouter)
 app.use('/product', productRouter)
 app.use('/review', reviewRouter)
+app.use('/cart', cartRouter)
 
 // app.get('/', (req,res) => {
 //     res.send('welcome to Employee webiste')
