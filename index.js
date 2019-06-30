@@ -12,6 +12,7 @@ const {productRouter} = require('./app/controllers/productController')
 const {reviewRouter} = require('./app/controllers/reviewController')
 const {cartRouter} = require('./app/controllers/cartController')
 const {orderRouter} = require('./app/controllers/orderController')
+const {statusRouter} = require('./app/controllers/orderstatusController')
 
 app.use(express.json())
 app.use(cors())
@@ -23,6 +24,7 @@ app.use('/product', productRouter)
 app.use('/review', reviewRouter)
 app.use('/cart', cartRouter)
 app.use('/order', orderRouter)
+app.use('/status', statusRouter)
 
 // app.get('/', (req,res) => {
 //     res.send('welcome to Employee webiste')
